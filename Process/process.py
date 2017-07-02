@@ -8,15 +8,13 @@ import sys
 import section
 import nltk
 from nltk.tokenize import SExprTokenizer
-import sent
 from nltk.tokenize import sent_tokenize
 import ref_sent
-import parts_of_speech
 
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-pri_matches = {"RELATED WORK": 10, "RELATED": 7, "SIMILAR": 9, "SIMILAR WORK":9, "Similar work": 10, "similar work":10, "related work":10, "Related work":10}
+pri_matches = {"RELATED WORK": 10, "RELATED": 7, "SIMILAR": 9, "SIMILAR WORK":9, "Similar work": 10, "similar work":8, "related work":8, "Related work":10}
 sec_matches = {"Introduction": 5, "introduction": 3, "Conclusion": 5, "conclusion": 3, "related": 4}
 
 def find_related(doc):

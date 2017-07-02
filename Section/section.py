@@ -2,7 +2,7 @@
 
 import os
 import nltk
-import pdf_to_text
+import ../Process/pdf_to_text
 from nltk.tokenize.texttiling import TextTilingTokenizer
 from nltk.corpus import PlaintextCorpusReader
 from nltk.tokenize import SExprTokenizer
@@ -22,11 +22,9 @@ def plain_corpus_section(doc):
 
     w = PlaintextCorpusReader(os.getcwd() + "/Repo/Text/", doc)
     return w.paras()
-    # print wordlists.fileids()
 
 def paran_sect(doc):
 
-    # a = SExprTokenizer(parens="[]").tokenize(doc)
     a = SExprTokenizer(parens="()").tokenize(doc)
     return a
 
