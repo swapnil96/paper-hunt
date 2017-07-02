@@ -16,10 +16,17 @@ from Process import *
 download.download(name)
 
 # Process all the PDFs to text and find the related work section in all of them.
-process.process_dir()
+process.process_dir(name)
 
-related_work.process_dir()
+related_work.process_dir(name)
 
 # Logic for checking if a PDF is mentioned in other in related work section.
+refs = os.listdir("Repo/related_work/" + name)
+for ref in refs:
 
-
+    for line in ref:
+        # 1st check with direct name
+        if ref in line:
+            
+        # Second name with numbering
+        else:
