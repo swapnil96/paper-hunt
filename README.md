@@ -1,7 +1,7 @@
 # paper-hunt
 Module for finding research papers related to a topic and find other papers relevant to it.
 
-# Structure of the repo
+## Structure of the repo
 1) main.py - Reads the command and does necessary action.
 2) setup.py - Checks for dependencies and loads all modules.
 3) Download folder has files for downloading papers related to a topic.
@@ -10,5 +10,5 @@ Module for finding research papers related to a topic and find other papers rele
 6) Repo folder has all the processed/downloaded files.
 
 
-# Dependencies
+## Dependencies
 1) Selenium
