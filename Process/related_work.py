@@ -1,6 +1,5 @@
 
-# from paper_hunt.Section import section
-from ..paper_hunt import Section
+from Section import section
 
 pri_matches = {"RELATED WORK": 10, "RELATED": 7, "SIMILAR": 9, "SIMILAR WORK":9, "Similar work": 10, "similar work":8, "related work":8, "Related work":10}
 sec_matches = {"Introduction": 5, "introduction": 3, "Conclusion": 5, "conclusion": 3, "related": 4}
