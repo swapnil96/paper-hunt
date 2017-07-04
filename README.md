@@ -11,4 +11,10 @@ Module for finding research papers related to a topic and find other papers rele
 
 
 ## Dependencies
-1) Selenium
+1) Setuptools
+    This package uses python-setuptools for dependencies check.
+    So type first - sudo apt-get install python-setuptools
+    Then setup.py will be ready to go.
+    
+2) Selenium
+3) NLTK
