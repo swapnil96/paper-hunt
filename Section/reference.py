@@ -2,7 +2,7 @@
 import re
 import os
 import sys
-import ref_sent
+import ref_list
 
 def find_reference(doc):
 
@@ -24,7 +24,7 @@ def find_reference(doc):
     elif match4 != []:
         new = doc[match4[-1][1]:]
 
-    refs = ref_sent.main(new)
+    refs = ref_list.main(new)
     f = open("../Repo/Reference/paper.txt", "w")
     for ref in refs:
         f.write(ref)
