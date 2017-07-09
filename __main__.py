@@ -14,6 +14,7 @@
 # from Download import download
 from Section import related_work
 from Section import reference
+from Process import pdf_to_text
 import re
 import os 
 
@@ -23,13 +24,16 @@ name = "FICA"
 papers = os.listdir("paper-hunt/Repo/" + name)
 for paper in papers:
     # Get the necessary sections
-    rw_sec = related_work.find_related(paper)
-    ref_sec = reference.find(paper)
+    text = pdf_to_text.text(name, paper)
+    print text
+    rw_sec = related_work.find_related(text)
+    ref_sec = reference.find(text)
     lis = re.findall('\[[^\]]*\]', sec)
     if lis:
         # Found related_work section
         temp = lis.split(',')
         num = []
+        print lis
         for t in xrange(len(temp)):
             if t == 0:
                 tt = temp[t].split('[')
@@ -65,3 +69,4 @@ for paper in papers:
             if name in ref:
                 ans.append(paper)
         
+    print 'adsf'
