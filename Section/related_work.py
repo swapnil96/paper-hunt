@@ -1,4 +1,4 @@
-
+    
 from Section import section
 
 pri_matches = {"RELATED WORK": 10, "RELATED": 7, "SIMILAR": 9, "SIMILAR WORK":9, "Similar work": 10, "similar work":8, "related work":8, "Related work":10}
