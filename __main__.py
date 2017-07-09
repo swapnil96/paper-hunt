@@ -20,10 +20,10 @@ import os
 # download.download(name)
 name = "FICA"
 # Logic for checking if a PDF is mentioned in other in related work section.
-papers = os.listdir("Repo/" + name)
+papers = os.listdir("paper-hunt/Repo/" + name)
 for paper in papers:
     # Get the necessary sections
-    rw_sec = related_work.find(paper)
+    rw_sec = related_work.find_related(paper)
     ref_sec = reference.find(paper)
     lis = re.findall('\[[^\]]*\]', sec)
     if lis:
