@@ -25,9 +25,10 @@ def find_reference(doc):
         new = doc[match4[-1][1]:]
 
     refs = ref_list.main(new)
-    f = open("../Repo/Reference/paper.txt", "w")
-    for ref in refs:
-        f.write(ref)
-        f.write("\n")
+    # f = open("../Repo/FICA/paper.txt", "w")
+    # for ref in refs:
+    #     f.write(ref)
+    #     f.write("\n")
 
-    f.close()
+    # f.close()
+    return refs
