@@ -1,5 +1,7 @@
 
 from Section import section
+import re
+import nltk
 
 pri_matches = {"RELATED WORK": 10, "RELATED": 7, "SIMILAR": 9, "SIMILAR WORK":9, "Similar work": 10, "similar work":8, "related work":8, "Related work":10}
 sec_matches = {"Introduction": 5, "introduction": 3, "Conclusion": 5, "conclusion": 3, "related": 4}
@@ -36,17 +38,22 @@ def find_related(doc):
                 if match != []:
                     sec_paras.append([para, total_length - temp_length, total_length])
 
-    # for para in pri_paras:
-    #     a = nltk.sent_tokenize(para[0])
-    #     t = section.paran_sect(para[0])
-    #     for j in t:
-    #         if j[0] == "[" or j[0] == "(":
-    #             print j
-    #
-    #     print '----------------------------------------------------------------------'
-    #     for j in a:
-    #         print j
+    # return pri_paras
+    # print sec_paras
+    sent = ""
+    for para in pri_paras:
+        a = nltk.sent_tokenize(para[0])
+        t = section.paran_sect(para[0])
+        for j in t:
+            if j[0] == "[" or j[0] == "(":
+                sent += j
+    
+        # print '----------------------------------------------------------------------'
+        sent += '----------------------------------------------------------------------'
+        for j in a:
+            sent += j
 
+    return sent
 
 # def process_dir(name):
 
