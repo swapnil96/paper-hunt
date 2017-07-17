@@ -25,18 +25,16 @@ papers = os.listdir("paper-hunt/Repo/" + name)
 for paper in papers:
     # Get the necessary sections
     text = pdf_to_text.text(name, paper)
-    # print text
-    print 'adsf'
     rw_sec = related_work.find_related(text)
     ref_sec = reference.find_reference(text)
-    lis = re.findall('\[[^\]]*\]', rw_sec)
-    print lis
-    if lis:
+    idx = re.findall('\[[^\]]*\]', rw_sec)
+    print text
+    print ref_sec
+    for lis in idx:
+    # if lis:
         # Found related_work section
         temp = lis.split(',')
         num = []
-        print lis
-        break
         for t in xrange(len(temp)):
             if t == 0:
                 tt = temp[t].split('[')
@@ -46,7 +44,8 @@ for paper in papers:
                     num.append(int(ttt[1]))
 
                 else:
-                    num.append(int(tt[1]))
+                    ttt = tt[1].split(']')
+                    num.append(int(ttt[0]))
 
             elif t == len(temp) - 1:
                 tt = temp[t].split(']')
