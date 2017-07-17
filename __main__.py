@@ -28,10 +28,7 @@ for paper in papers:
     rw_sec = related_work.find_related(text)
     ref_sec = reference.find_reference(text)
     idx = re.findall('\[[^\]]*\]', rw_sec)
-    print text
-    print ref_sec
     for lis in idx:
-    # if lis:
         # Found related_work section
         temp = lis.split(',')
         num = []
@@ -55,7 +52,7 @@ for paper in papers:
                     num.append(int(ttt[1]))
 
                 else:
-                    num.append(int(tt[1]))
+                    num.append(int(tt[0]))
 
             else:
                 if '-' in temp[t]:
@@ -67,8 +64,12 @@ for paper in papers:
                     num.append(int(temp[t]))
 
         for n in num:
-            ref = ref_sec[n]
-            if name in ref:
-                ans.append(paper)
-        
+            try:
+                ref = ref_sec[n]
+                if name in ref:
+                    ans.append(paper)
+
+            except:
+                pass    
+            
     print 'adsf'
