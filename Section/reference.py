@@ -13,7 +13,6 @@ def find_reference(doc):
 
     if match1 != []:
         new = doc[match1[-1][1]:]
-        # sent_tokenize_list = sent_tokenize(new)
 
     elif match2 != []:
         new = doc[match2[-1][1]:]
