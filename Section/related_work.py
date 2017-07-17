@@ -38,8 +38,6 @@ def find_related(doc):
                 if match != []:
                     sec_paras.append([para, total_length - temp_length, total_length])
 
-    # return pri_paras
-    # print sec_paras
     sent = ""
     for para in pri_paras:
         a = nltk.sent_tokenize(para[0])
@@ -48,12 +46,8 @@ def find_related(doc):
             if j[0] == "[" or j[0] == "(":
                 sent += j
     
-        # print '----------------------------------------------------------------------'
-        sent += '----------------------------------------------------------------------'
+        sent += ' '
         for j in a:
             sent += j
 
     return sent
-
-# def process_dir(name):
-
